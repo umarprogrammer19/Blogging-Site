@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogging Site</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="flex flex-col ">
+
+    <!-- Navbar -->
+    <div class="navbar bg-primary static top-0 p-0 pr-3">
+        <div class="navbar text-primary-content">
+            <button class="btn btn-ghost text-2xl text-white">Personal Blogging Site</button>
+        </div>
+        <div>
+            <!-- For Logout Button -->
+            <div class="w-24">
+                <button class="btn" id="sign-out">Sign Out</button>
+            </div>
+            <!-- For Theme Controller -->
+            <div class="dropdown p-1">
+                <div tabindex="0" role="button" class="btn w-24">
+                    Theme
+                    <svg width="12px" height="12px" class="inline-block h-2 w-2 fill-current opacity-60"
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 2048">
+                        <path d="M1799 349l242 241-1017 1017L7 590l242-241 775 775 775-775z"></path>
+                    </svg>
+                </div>
+                <ul tabindex="0" class="dropdown-content bg-base-300 rounded-box z-[1] p-2 shadow-2xl">
+                    <li>
+                        <input type="radio" name="theme-dropdown"
+                            class="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="Default"
+                            value="default" />
+                    </li>
+                    <li>
+                        <input type="radio" name="theme-dropdown"
+                            class="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="Retro"
+                            value="retro" />
+                    </li>
+                    <li>
+                        <input type="radio" name="theme-dropdown"
+                            class="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="Cyberpunk"
+                            value="cyberpunk" />
+                    </li>
+                    <li>
+                        <input type="radio" name="theme-dropdown"
+                            class="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="Valentine"
+                            value="valentine" />
+                    </li>
+                    <li>
+                        <input type="radio" name="theme-dropdown"
+                            class="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="Aqua"
+                            value="aqua" />
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <main class="p-8">
+        <section class="bg-white p-6 rounded-lg shadow-lg mb-6">
+            <h2 class="text-xl font-bold mb-4">Post a New Blog</h2>
+            <form id="newBlogForm" class="space-y-4">
+                <div class="form-group">
+                    <label for="title" class="block text-sm font-medium text-gray-700">Title:</label>
+                    <input type="text" id="title" name="title"
+                        class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm h-8"
+                        required minlength="5" maxlength="50">
+                </div>
+
+                <div class="form-group">
+                    <label for="body" class="block text-sm font-medium text-gray-700">Body:</label>
+                    <textarea id="body" name="body"
+                        class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm"
+                        required minlength="100" maxlength="3000"></textarea>
+                </div>
+
+                <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">Post</button>
+            </form>
+        </section>
+
+        <section class="bg-white p-6 rounded-lg shadow-lg">
+            <h2 class="text-xl font-bold mb-4">Your Blogs</h2>
+            <div id="blogsContainer" class="space-y-4"></div>
+        </section>
+    </main>
+
+
+    <!-- Javascript -->
+    <script type="module" src="./scripts/home.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</body>
+
+</html>

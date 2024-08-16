@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogging Site</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="flex flex-col items-center justify-center h-screen p-4 overflow-x-hidden">
+
+    <!-- Navbar -->
+    <div class="navbar bg-primary absolute top-0 p-0 pr-3">
+        <div class="navbar text-primary-content">
+            <button class="btn btn-ghost text-2xl text-white">Personal Blogging Site</button>
+        </div>
+        <!-- For Theme Controller -->
+        <div class="dropdown p-1">
+            <div tabindex="0" role="button" class="btn w-24">
+                Theme
+                <svg width="12px" height="12px" class="inline-block h-2 w-2 fill-current opacity-60"
+                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 2048">
+                    <path d="M1799 349l242 241-1017 1017L7 590l242-241 775 775 775-775z"></path>
+                </svg>
+            </div>
+            <ul tabindex="0" class="dropdown-content bg-base-300 rounded-box z-[1] p-2 shadow-2xl">
+                <li>
+                    <input type="radio" name="theme-dropdown"
+                        class="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="Default"
+                        value="default" />
+                </li>
+                <li>
+                    <input type="radio" name="theme-dropdown"
+                        class="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="Retro"
+                        value="retro" />
+                </li>
+                <li>
+                    <input type="radio" name="theme-dropdown"
+                        class="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="Cyberpunk"
+                        value="cyberpunk" />
+                </li>
+                <li>
+                    <input type="radio" name="theme-dropdown"
+                        class="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="Valentine"
+                        value="valentine" />
+                </li>
+                <li>
+                    <input type="radio" name="theme-dropdown"
+                        class="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="Aqua"
+                        value="aqua" />
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Sign In Form -->
+    <div class="max-w-sm w-full bg-white shadow-md rounded-lg p-8">
+        <h2 class="text-2xl font-semibold text-blue-600 mb-6">Sign In</h2>
+        <form id="sign-in">
+            <div class="mb-4">
+                <label for="email" class="block text-gray-700">Email</label>
+                <input type="email" id="email" name="email" required
+                    class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+            </div>
+            <div class="mb-6">
+                <label for="password" class="block text-gray-700">Password</label>
+                <input type="password" id="password" name="password" required
+                    class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+            </div>
+            <button type="submit"
+                class="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">Sign
+                In</button>
+            <p class="mt-4 text-center text-gray-600">Don't have an account? <a href="./signup.html"
+                    class="text-blue-600 hover:underline">Sign up</a></p>
+        </form>
+    </div>
+
+    <!-- For Showing Popup If User Not Put Any Details -->
+    <dialog id="my_modal_1" class="modal">
+        <div class="modal-box">
+            <h3 class="text-lg font-bold">Hello!</h3>
+            <p class="py-4 bold">Please Enter a Required Information For Registration!</p>
+            <div class="modal-action">
+                <form method="dialog">
+                    <!-- if there is a button in form, it will close the modal -->
+                    <button class="btn hover:bg-black hover:text-white">Close</button>
+                </form>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- Javascript -->
+
+    <script type="module" src="./scripts/signin.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</body>
+
+</html>
